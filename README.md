@@ -14,3 +14,7 @@ Enjoy
 Ps : you need to update your uuid.
 
 I will said here soon how to make your own bots ;)
+
+#Fix
+
+Please update the userscript in : userscript.js and the cellcraft bots :)
