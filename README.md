@@ -10,6 +10,11 @@ Make : npm install
 
 open server.bat 
 
+
+#Config
+
+You need to put your uuid in config.js
+
 Enjoy
 Ps : you need to update your uuid.
 
