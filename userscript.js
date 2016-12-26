@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        primeagar.com - Client Script
+// @name        OUPS - Client Script
 // @namespace    primeagar.com - Client Script
 // @version      1.0
 // @description  its da best
@@ -90,10 +90,9 @@
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
+
 setTimeout(function() {
-	
-	
-window.__WebSocket = window.WebSocket;
+    window.__WebSocket = window.WebSocket;
     window.fakeWebSocket = function(){return {readyState: 0}};
     window._WebSocket = window.WebSocket = function(ip){return new window.fakeWebSocket(ip);};
     window.__botclonsData = {};
@@ -180,9 +179,8 @@ window.__WebSocket = window.WebSocket;
         return fakeWS;
         }
         if(location.origin=="http://cellcraft.io")connect("");
-    });
-	
-var real_minx = -7071;
+    })
+    var real_minx = -7071;
     var real_miny = -7071;
     var real_maxx = 7071;
     var real_maxy = 7071;
@@ -196,7 +194,7 @@ var real_minx = -7071;
     function valcompare(Y, Z) {
         return 0.01 > Y - Z && -0.01 < Y - Z
     }
-    var socket = io.connect('ws://localhost:8081');
+    var socket = io.connect('ws://127.0.0.1:8081');
     var canMove = true;
     var movetoMouse = true;
     var moveEvent = new Array(2);
@@ -209,37 +207,49 @@ var real_minx = -7071;
         });
         transmit_game_server()
     });
-	var t = "<div style='background-color: #000000; -moz-opacity: 0.4; -khtml-opacity: 0.4; opacity: 0.4; filter: alpha(opacity=40); zoom: 1; width: 205px; top: 10px; left: 10px; display: block; position: absolute; text-align: center; font-size: 15px; color: #ffffff; padding: 5px; font-family: Ubuntu;'> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><a>primeagar.com</a></div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Bots: <a id='minionCount' >Offline</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Movement Offset: <a id='ismoveToMouse' >0</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Position: <a id='gh45nmvsy' >-</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Stop Movement: <a id='isStopMove' >Off</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Chat Spam: <a id='dfdghehfj' >Off</a> </div>";
-	var e = document.createElement('div');
-	e.innerHTML = t;
-	document.body.appendChild(e);
-	
-	socket.on('spawn-count', function(data) {
+   
+    $( "#canvas" ).after( "<div style='background-color: #000000; -moz-opacity: 0.4; -khtml-opacity: 0.4; opacity: 0.4; filter: alpha(opacity=40); zoom: 1; width: 205px; top: 10px; left: 10px; display: block; position: absolute; text-align: center; font-size: 15px; color: #ffffff; padding: 5px; font-family: Ubuntu;'> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><a>lefela4Bots</a></div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Bots: <a id='minionCount' >Offline</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Movement Offset: <a id='ismoveToMouse' >0</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Position: <a id='gh45nmvsy' >-</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Stop Movement: <a id='isStopMove' >Off</a> </div> <div style='color:#ffffff; display: inline; -moz-opacity:1; -khtml-opacity: 1; opacity:1; filter:alpha(opacity=100); padding: 10px;'><br>Chat Spam: <a id='dfdghehfj' >Off</a> </div>" );
+   socket.on('spawn-count', function(data) {
         document.getElementById('minionCount').innerHTML = data
     });
-var client_uuid = localStorage.getItem('client_uuid');
+    var client_uuid = localStorage.getItem('client_uuid');
     if (client_uuid == null) {
         console.log("generating a uuid for this user");
         client_uuid = ""; var ranStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         for (var ii = 0; ii < 15; ii++) client_uuid += ranStr.charAt(Math.floor(Math.random() * ranStr.length));
         localStorage.setItem('client_uuid', client_uuid)
     }
-
     socket.emit("login", client_uuid);
-	
-		document.getElementById('ad_main').innerHTML = '<br><div class="input-group"><span class="input-group-addon" id="basic-addon1">UUID</span><input type="text" value="' + client_uuid + '" readonly class="form-control"</div>';
-	
-	  function emitPosition() {
-        
-        document.getElementById('gh45nmvsy').innerHTML = (~~(window.__botclonsData.mx-window.__botclonsData.ma))+","+(~~(window.__botclonsData.my-window.__botclonsData.mb));
+    $("#instructions").replaceWith('<br><div class="input-group"><span class="input-group-addon" id="basic-addon1">UUID</span><input type="text" value="' + client_uuid + '" readonly class="form-control"</div>');
+
+    function isMe(cell) {
+        for (var i = 0; i < window.agar.myCells.length; i++) {
+            if (window.agar.myCells[i] == cell.id) {
+                return true
+            }
+        }
+        return false
+    }
+
+    function getCell() {
+        var me = [];
+        for (var key in window.agar.allCells) {
+            var cell = window.agar.allCells[key];
+            if (isMe(cell)) {
+                me.push(cell)
+            }
+        }
+        return me[0]
+    }
+    var skin_var = 0;
+
+    function emitPosition() {
+        console.log(client_uuid);
+        document.getElementById('gh45nmvsy').innerHTML=(~~(window.__botclonsData.mx-window.__botclonsData.ma))+","+(~~(window.__botclonsData.my-window.__botclonsData.mb));
         socket.emit("pos", {
             "x": window.__botclonsData.mx-window.__botclonsData.ma,
-           "y": window.__botclonsData.my-window.__botclonsData.mb,
-			//"x": x,
-			//"y": y,
-		//	"l": canvasWidth,
-		//	"p": canvasHeight,
-       //     "l": window.__botclonsData.ml,
+            "y": window.__botclonsData.my-window.__botclonsData.mb,
+            "l": window.__botclonsData.ml,
             "p": window.__botclonsData.p,
             "c": window.__botclonsData.q
         })
@@ -279,16 +289,18 @@ var client_uuid = localStorage.getItem('client_uuid');
                 if(!window.__botclonsData.sa){
                     window.__botclonsData.sa=true;
                 window.__botclonsData.s = setInterval(function() {
-
-				}, 10);
+$("body").trigger($.Event("keydown", { keyCode: 32}));
+$("body").trigger($.Event("keyup", { keyCode: 32}));
+}, 10);
                 }
                 break;
             case 87:
                 if(!window.__botclonsData.wa){
                     window.__botclonsData.wa=true;
-					window.__botclonsData.w = setInterval(function() {
-
-					}, 10);
+window.__botclonsData.w = setInterval(function() {
+$("body").trigger($.Event("keydown", { keyCode: 87}));
+$("body").trigger($.Event("keyup", { keyCode: 87}));
+}, 10);
                 }
                 break;
                 case 65:
@@ -340,21 +352,14 @@ var client_uuid = localStorage.getItem('client_uuid');
         last_transmited_game_server = window.__botclonsData.socketaddr;
         socket.emit("cmd", {
             "name": "connect_server",
-            "ip": "ws://192.168.5.137:8080",
+            "ip": window.__botclonsData.socketaddr,
             "origin": location.origin
         })
     }
     var mouseX = 0;
     var mouseY = 0;
-	
-	document.body.onmousemove = function(event) {myFunction(event)};
-	
-	function myFunction (event) {
-		
-		mouseX = event.clientX;
-        mouseY = event.clientY;
-		
-	}
-
-}, 2000);		
-		
+    $("body").mousemove(function(event) {
+        mouseX = event.clientX;
+        mouseY = event.clientY
+    });
+}, 200)
