@@ -10,14 +10,16 @@ Agar will come in 1 week :D : 2017-1-7 or the 2016-12-31 for the new year !
 #How to install
 Intallation :
 You need to have node js
-
+<p>
 Make : npm install
+<p>
 OR
-1. Open: Install.bat
-2. Open: StartServer.bat
-3. Open: StartBots.bat
-4. You done :D
-
+<p>
+1. Open: Install.bat <p>
+2. Open: StartServer.bat<p>
+3. Open: StartBots.bat<p>
+4. You done :D<p>
+<p>
 
 #Config
 <h2> How to get his uuid </h2>
