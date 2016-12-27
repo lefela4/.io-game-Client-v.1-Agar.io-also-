@@ -13,8 +13,11 @@ Intallation :
 You need to have node js
 
 Make : npm install
-
-open server.bat 
+OR
+1. Open: Install.bat
+2. Open: StartServer.bat
+3. Open: StartBots.bat
+4. You done :D
 
 
 #Config
