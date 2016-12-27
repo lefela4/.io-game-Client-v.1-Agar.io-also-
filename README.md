@@ -3,8 +3,7 @@ Hey, I am lefela4, I will release there the way to make your own bots.
 Agar.io will be here : https://github.com/lefela4/Agar.io-client-v3/tree/master
 
 #Updating
-
-We are now trying to fix bots for alis and gota.
+Please update all folder :D
 You will see the update soon.
 Agar will come in 1 week :D : 2017-1-7 or the 2016-12-31 for the new year !
 
