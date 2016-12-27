@@ -1,5 +1,5 @@
 # .io-game-Client v1 made by lefela4
-Hi i am lefela4, I will release here the way to make their own bots.
+Hey, I am lefela4, I will release there the way to make your own bots.
 Agar.io will be here : https://github.com/lefela4/Agar.io-client-v3/tree/master
 
 #Updating
