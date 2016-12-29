@@ -1,7 +1,12 @@
 # .io-game-Client v1 made by lefela4
 Hey, I am lefela4, I will release there the way to make your own bots.
 Agar.io will be here : https://github.com/lefela4/Agar.io-client-v3/tree/master
-
+ 
+#Patched
+1. cell.sh (for some user) (Capcha XD)
+2. gota.io - 50 % working (for some user)
+3. alis - 50% working (for some user)
+ 
 #Updating
 Please update all folder :D
 You will see the update soon.
